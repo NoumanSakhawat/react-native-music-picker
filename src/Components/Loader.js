@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { View, StyleSheet, StatusBar, ActivityIndicator } from 'react-native';
 
 // Lib
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 // Mics Constants
 import * as Constants from '../Helper/Constants';
@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
   },
 });
 
-Loader.PropTypes = {
-  loaderColor: PropTypes.string.isRequired,
+Loader.propTypes = {
+  loaderColor: propTypes.string.isRequired,
 };
 
 export default Loader;
