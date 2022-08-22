@@ -11,7 +11,7 @@ import {
   PermissionsAndroid,
 } from 'react-native';
 
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import RNNativeMusicPicker from '../Components/RNNativeMusicPicker';
 import { styles } from './RNMusicPickerStyle';
 import { images } from '../Theme';
@@ -70,7 +70,7 @@ class RNMusicPicker extends Component {
         this.setState({ arrayMusic: arrayMusicResponse, isLoading: false });
       })
       .catch(error => {
-        Alert.alert(error);
+        console.log('ERROR ON GET TRACKS ',error)
         this.setState({ isLoading: false });
       });
   };
@@ -270,19 +270,19 @@ class RNMusicPicker extends Component {
   }
 }
 
-RNMusicPicker.PropTypes = {
-  sectionContainerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array]),
-  sectionTextStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array]),
-  itemContainerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array]),
-  songTitleStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array]),
-  songDescriptionStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array]),
-  fastScrollTextStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array]),
-  buttonContainerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array]),
-  buttonTextStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number, PropTypes.array]),
+RNMusicPicker.propTypes = {
+  sectionContainerStyle: propTypes.oneOfType([propTypes.object, propTypes.number, propTypes.array]),
+  sectionTextStyle: propTypes.oneOfType([propTypes.object, propTypes.number, propTypes.array]),
+  itemContainerStyle: propTypes.oneOfType([propTypes.object, propTypes.number, propTypes.array]),
+  songTitleStyle: propTypes.oneOfType([propTypes.object, propTypes.number, propTypes.array]),
+  songDescriptionStyle: propTypes.oneOfType([propTypes.object, propTypes.number, propTypes.array]),
+  fastScrollTextStyle: propTypes.oneOfType([propTypes.object, propTypes.number, propTypes.array]),
+  buttonContainerStyle: propTypes.oneOfType([propTypes.object, propTypes.number, propTypes.array]),
+  buttonTextStyle: propTypes.oneOfType([propTypes.object, propTypes.number, propTypes.array]),
   defaultSongIcon: Image.propTypes.source,
   defaultAddIcon: Image.propTypes.source,
   defaultTickIcon: Image.propTypes.source,
-  loaderColor: PropTypes.string,
+  loaderColor: propTypes.string,
 };
 
 RNMusicPicker.defaultProps = {
